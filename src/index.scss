@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+// container Builder Home
+
+.imposer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &__content {
+    width: 512px;
+  }
+  &__title {
+    font-size: 42px;
+  }
+  &__subtitle {
+    font-size: 26px;
+    font-weight: normal;
+    color: #888888;
+  }
+  &__form {
+    width: 512px;
+    height: 134px;
+    border-radius: 10px;
+    box-shadow: 0 6px 50px 0 #cfd4d4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &--group {
+      label {
+        display: inline-block;
+        font-size: 18px;
+        color: #39383e;
+        margin-bottom: 18px;
+      }
+      input[type="text"] {
+        width: 185px;
+        height: 42px;
+        border-radius: 5px;
+        box-shadow: inset 1px 2px 7px 0 rgba(96, 96, 96, 0.31);
+        border: solid 1px #c6c6c6;
+        background-color: #ffffff;
+        font-size: 16px;
+        font-family: "Rubik", sans-serif;
+        padding-left: 24px;
+        &::placeholder {
+          color: #7f858c;
+        }
+      }
+      
+      input[type=file] {
+          width: 185px;
+          color: transparent;
+        &::-webkit-file-upload-button {
+          width: 185px;
+          height: 42px;
+          border-radius: 5px;
+          background-color: #919d9d;
+          color: #fff;
+          border: none; font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+// Buttons
+.btn__oval{
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #8855ff, #6536d3);
+  img{
+    vertical-align: middle;
+  }
+}
+// Footer Menu
+
+footer {
+  width: 100%;
+  height: 100px;
+  box-shadow: inset 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, #4a4a4a, #222222 125%);
+  .copyrights {
+    width: 167px;
+    height: 27px;
+    color: white;
+  }
+}
+.AProjectbyPastel{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
