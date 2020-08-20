@@ -1,21 +1,25 @@
 import React from "react";
 import Aux from "../../hoc/Aux";
 
-import imgSubmit from "../../assets/Chevron.svg";
-import UploadImg from "./UploadImg/UploadImg";
-import UploadUrl from "./UploadUrl/UploadUrl";
+import UploadFile from "./UploadFile/UploadFile";
+import WebsiteUrl from "../../components/CompareForm/UploadWebsiteUrl/UploadWebsiteUrl";
 
 const compareForm = (props) => {
   return (
     <Aux>
-      <div className="imposer__form">
-        <UploadImg />
-        <UploadUrl />
-        <div className="imposer__form--group">
-          <button className="btn__oval">
-            <img src={imgSubmit} alt="submit button" />
-          </button>
+        <div className="imposer">
+
+      <div className="imposer__content">
+        <h1 className="imposer__title">Compare pixels</h1>
+        <p className="imposer__subtitle">
+          See the difference between design mockups and the live website.
+        </p>
+        <div className="imposer__form">
+          <UploadFile {...props} />
+          <WebsiteUrl {...props} />
+          {props.children}
         </div>
+      </div>
       </div>
     </Aux>
   );
