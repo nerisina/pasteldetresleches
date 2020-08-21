@@ -7,8 +7,6 @@ import WebsiteUrl from "../../components/CompareForm/UploadWebsiteUrl/UploadWebs
 const compareForm = (props) => {
   return (
     <Aux>
-        <div className="imposer">
-
       <div className="imposer__content">
         <h1 className="imposer__title">Compare pixels</h1>
         <p className="imposer__subtitle">
@@ -19,7 +17,9 @@ const compareForm = (props) => {
           <WebsiteUrl {...props} />
           {props.children}
         </div>
-      </div>
+        {props.error && <p className="error">{props.error}</p>}
+        {props.handleResponse && <p className="error">{props.handleResponse.message}</p>}
+
       </div>
     </Aux>
   );

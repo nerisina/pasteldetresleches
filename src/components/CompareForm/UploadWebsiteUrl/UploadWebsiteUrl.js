@@ -5,10 +5,12 @@ const UploadWebsiteUrl = (props) => {
     <div className="imposer__form--group">
       <label>Step two</label>
       <input 
-      type="text" 
+      type="url" 
       placeholder="Enter website URL" 
       value={props.websiteUrl}
-      onChange={props.onChangeWebsite}/>
+      onChange={props.onChangeWebsite}
+      pattern="https?://.+" required/>
+
     </div>
   );
 };

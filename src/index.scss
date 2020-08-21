@@ -9,7 +9,7 @@ body {
 
 .imposer {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 137px);
   display: flex;
   align-content: center;
   justify-content: center;
@@ -19,6 +19,7 @@ body {
     width: 512px;
   }
   &__title {
+    margin-top: 0px;
     font-size: 42px;
   }
   &__subtitle {
@@ -26,8 +27,9 @@ body {
     font-weight: normal;
     color: #888888;
   }
+  // Forms
   &__form {
-    width: 512px;
+    // width: 512px;
     height: 134px;
     border-radius: 10px;
     box-shadow: 0 6px 50px 0 #cfd4d4;
@@ -35,13 +37,15 @@ body {
     justify-content: space-around;
     align-items: center;
     &--group {
+      width: 200px;
       label {
         display: inline-block;
         font-size: 18px;
         color: #39383e;
         margin-bottom: 18px;
       }
-      input[type="text"] {
+      input[type="text"],
+      input[type="url"] {
         width: 185px;
         height: 42px;
         border-radius: 5px;
@@ -55,17 +59,18 @@ body {
           color: #7f858c;
         }
       }
-      
-      input[type=file] {
-          width: 185px;
-          color: transparent;
+
+      input[type="file"] {
+        width: 185px;
+        color: transparent;
         &::-webkit-file-upload-button {
           width: 185px;
           height: 42px;
           border-radius: 5px;
           background-color: #919d9d;
           color: #fff;
-          border: none; font-size: 16px;
+          border: none;
+          font-size: 16px;
           font-weight: 500;
         }
       }
@@ -74,13 +79,13 @@ body {
 }
 
 // Buttons
-.btn__oval{
+.btn__oval {
   width: 34px;
   height: 34px;
   border: none;
   border-radius: 50%;
   background: linear-gradient(to bottom, #8855ff, #6536d3);
-  img{
+  img {
     vertical-align: middle;
   }
 }
@@ -88,20 +93,72 @@ body {
 
 footer {
   width: 100%;
-  height: 100px;
+  height: 137px;
+
   box-shadow: inset 0 5px 10px 0 rgba(0, 0, 0, 0.5);
   background-image: linear-gradient(to bottom, #4a4a4a, #222222 125%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .copyrights {
     width: 167px;
     height: 27px;
     color: white;
   }
 }
-.AProjectbyPastel{
-  text-align: center;
-  display: flex;
-  justify-content: center;
+
+.bottom__nav {
+    width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    &--right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--btn {
+      font-family: Rubik;
+      font-size: 19.2px;
+      font-weight: normal;
+      color: #bababa; 
+      background: none;
+      border: none;
+      margin: 0 10px;
+      display: inline-block;
+      padding: 6px 0;
+      &.active {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+
+// Ads
+.ad {
+  display: inline-flex;
+  font-size: 14px;
+  width: 305px;
+  text-align: left;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  &__logo {
+    margin-right: 17px;
+  }
+  &__title {
+    color: #fff;
+    margin-bottom: 6px;
+    margin-top: 0px;
+  }
+  &__subtitle {
+    color: #bababa;
+    margin: 0px;
+  }
+  a {
+    color: #bababa;
+  }
+}
+// Alerts
+.error{
+  color: coral
 }
