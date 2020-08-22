@@ -110,16 +110,16 @@ footer {
   }
 }
 
-.bottom__nav {
+.nav {
     width: 1024px;
     display: flex;
     justify-content: space-between;
-    &--right {
+    &__right {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    &--btn {
+    &__link {
       font-family: Rubik;
       font-size: 19.2px;
       font-weight: normal;
@@ -130,7 +130,7 @@ footer {
       display: inline-block;
       padding: 6px 0;
       text-decoration: none;
-      &.active {
+      &--active {
         color: #fff;
         border-bottom: 2px solid #fff;
       }
