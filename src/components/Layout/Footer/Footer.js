@@ -14,10 +14,10 @@ const footer = (props) => {
       </div>
     ) : (
       <div className="bottom__nav">
-        <ul className="bottom__nav--right">
-            <li className="bottom__nav--btn"><Link to="/design">Design</Link></li>
-            <li className="bottom__nav--btn"><Link to="/website">Website</Link></li>
-        </ul>
+        <div className="bottom__nav--right">
+            <Link className="bottom__nav--btn" to="/design">Design</Link>
+            <Link className="bottom__nav--btn" to="/website">Website</Link>
+        </div>
         <div className="bottom__nav--left">
           <Ad />
         </div>

@@ -38,7 +38,6 @@ class CompareBuilder extends Component {
         file: URL.createObjectURL(imgFile),
         invalidFile: null,
       });
-      console.log(this.state.file);
     };
 
     reader.onerror = () => {
@@ -53,29 +52,30 @@ class CompareBuilder extends Component {
 
   uploadOnChangeHandlerWebsite = (event) => {
     const urlValue = event.target.value;
-    const res = urlValue.match(
-      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
-    );
     if (!urlValue) {
       this.setState({ invalidFile: "Please enter url" });
       return false;
     }
-
-    if (res == null) {
-      this.setState({ invalidFile: "Please enter a valid format" });
+    this.setState((prevState) => {
+      return {
+        websiteUrl: urlValue,
+      };
+    });
+    var regex = new RegExp(/^(ftp|http|https):\/\/[^ "]+$/);
+    if (!urlValue.match(regex)) {
+      this.setState({
+        handleResponse: {
+          isSuccess: false,
+          message: "Check how you wrote the url - it shoud be something like: https://google.com",
+        },
+      })
       return false;
-    } else {
-      this.setState((prevState) => {
-        return {
-          websiteUrl: urlValue,
-        };
-      });
-      return true;
     }
   };
 
   handleUpload = () => {
-    if (!this.state.file) {
+    const { file } = this.state;
+    if (!file) {
       this.setState({
         handleResponse: {
           isSuccess: false,
@@ -84,6 +84,7 @@ class CompareBuilder extends Component {
       });
       return false;
     }
+
     const post = {
       url: this.state.websiteUrl,
       userAgent: window.navigator.userAgent,
@@ -102,10 +103,9 @@ class CompareBuilder extends Component {
         });
       })
       .catch((err) => {
-        console.log(err.message);
         this.setState({
           handleResponse: {
-            message: "error",
+            message: "Please add URL",
           },
         });
       });
@@ -122,7 +122,7 @@ class CompareBuilder extends Component {
                 onChangeWebsite={this.uploadOnChangeHandlerWebsite}
                 websiteUrl={this.state.websiteUrl}
                 error={this.state.invalidFile}
-                handleResponse={this.state.isSuccess}
+                handleResponse={this.state.handleResponse}
               >
                 <button className="btn__oval" onClick={this.handleUpload}>
                   <img src={imgSubmit} alt="submit button" />

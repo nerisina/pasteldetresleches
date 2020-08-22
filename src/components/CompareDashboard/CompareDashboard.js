@@ -7,16 +7,7 @@ import Website from "./Website";
 const compareDashboard = (props) => {
   return (
     <div
-      className="compare"
-      style={{
-        width: "90vw",
-        height: "calc(90vh-137px)",
-        border: "1px solid #fff",
-        background: "pink",
-        borderRadius: "5px",
-        boxShadow: "0 6px 50px 0 #cfd4d4",
-      }}
-    >
+      className="compare__wrapper" >
       <Switch>
         <Route
           exact
