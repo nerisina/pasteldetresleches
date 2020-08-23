@@ -27,15 +27,15 @@ body {
     font-weight: normal;
     color: #888888;
   }
-  // Forms
+  // Form
   &__form {
-    // width: 512px;
-    height: 134px;
+    width: 512px;
     border-radius: 10px;
     box-shadow: 0 6px 50px 0 #cfd4d4;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 34px;
     &--group {
       width: 200px;
       label {
