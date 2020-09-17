@@ -89,6 +89,7 @@ class CompareBuilder extends Component {
       url: this.state.websiteUrl,
       userAgent: window.navigator.userAgent,
     };
+    
     axios
       .post("https://api.pastelcanvases.com/verify-url", post)
       .then((response) => {
